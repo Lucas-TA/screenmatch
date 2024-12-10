@@ -17,6 +17,12 @@ public class Title implements Classification {
         this.includedOnPlan = includedOnPlan;
     }
 
+    public Title(TitleOmdb titleOmdb) {
+        this.name = titleOmdb.title();
+        this.releaseYear = Integer.parseInt(titleOmdb.year());
+        this.minDuration = Integer.parseInt(titleOmdb.runtime().substring(0, 3));
+    }
+
     public void showInfo() {
         System.out.println("Movie title: " + name);
         System.out.println("Release year: " + releaseYear);
@@ -73,4 +79,10 @@ public class Title implements Classification {
         return (int) getAverage() / 2;
     }
 
+    @Override
+    public String toString() {
+        return  "Title: '" + name + '\'' +
+                ", Released: " + releaseYear +
+                ", Duration: " + minDuration;
+    }
 }
