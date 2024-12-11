@@ -1,0 +1,18 @@
+[
+  {
+    "Name": "Harry Potter and the Deathly Hallows: Part 2",
+    "ReleaseYear": 2011,
+    "IncludedOnPlan": false,
+    "RatingSum": 0.0,
+    "RatingTotal": 0,
+    "MinDuration": 130
+  },
+  {
+    "Name": "Avatar",
+    "ReleaseYear": 2009,
+    "IncludedOnPlan": false,
+    "RatingSum": 0.0,
+    "RatingTotal": 0,
+    "MinDuration": 162
+  }
+]

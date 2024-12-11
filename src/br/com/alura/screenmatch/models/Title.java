@@ -1,6 +1,7 @@
 package br.com.alura.screenmatch.models;
 
 import br.com.alura.screenmatch.calculation.Classification;
+import br.com.alura.screenmatch.exceptions.InvalidYearFormat;
 
 public class Title implements Classification {
     private String name;
@@ -19,6 +20,9 @@ public class Title implements Classification {
 
     public Title(TitleOmdb titleOmdb) {
         this.name = titleOmdb.title();
+        if (titleOmdb.year().length() > 4) {
+            throw new InvalidYearFormat("Invalid year. Year contains more than 4 characters");
+        }
         this.releaseYear = Integer.parseInt(titleOmdb.year());
         this.minDuration = Integer.parseInt(titleOmdb.runtime().substring(0, 3));
     }
@@ -81,8 +85,9 @@ public class Title implements Classification {
 
     @Override
     public String toString() {
-        return  "Title: '" + name + '\'' +
+        return  "(Title: '" + name + '\'' +
                 ", Released: " + releaseYear +
-                ", Duration: " + minDuration;
+                ", Duration: " + minDuration +
+                ")";
     }
 }
